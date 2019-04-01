@@ -1,0 +1,16 @@
+heap.obj : heap.asm
+  masm /Zi heap;
+
+tryheap.obj : tryheap.asm
+  masm /Zi tryheap;
+
+htol.obj : htol.asm
+  masm /Zi htol;
+
+itoh.obj : itoh.asm
+  masm /Zi itoh;
+
+tryheap.exe : tryheap.obj heap.obj itoh.obj htol.obj
+  link /CO tryheap+heap+htol+itoh;
+
+
